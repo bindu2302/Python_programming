@@ -31,13 +31,20 @@ print(len(message)) # 19
 
 #4.Changing the Case
 greeting = "Hello, world"
-print(greeting.upper()) # HELLO, WORLD
-print(greeting.lower()) # hello, world
+print(greeting.upper())  # HELLO, WORLD
+print(greeting.lower())  # hello, world
+print(greeting.capitalize()) # Hello, world
+print(greeting.title())      # Hello, World
+print(greeting.swapcase())   # hELLO, WORLD
+
 
 #5.Finding the Substring in a String
 text = "Learning Python is fun!"
-print(text.find("Python")) # 9  -->returns -1 if not found
-print("fun" in text)  # true
+print(text.find("Python"))  # 9  (returns -1 if not found)
+print(text.index("Python")) # 9  (error if not found)
+print("fun" in text)        # True
+print("java" not in text)   # True
+
 
 #6.Replacing parts of a String
 sentence = "I Like java."
@@ -52,5 +59,43 @@ text_string = '-'.join(text_list)
 print(text_list) #['My', 'name', 'is', 'Bindu']
 print(text_string) # My-name-is-Bindu
 
+# 8. Counting Occurrences
+msg = "banana"
+print(msg.count("a"))  # 3
 
 
+# 9. Stripping Spaces
+txt = "   Python   "
+print(txt.strip())   # "Python"
+print(txt.lstrip())  # "Python   "
+print(txt.rstrip())  # "   Python"
+
+
+# 10. startswith() / endswith()
+name = "Himabindu"
+print(name.startswith("Hima"))  # True
+print(name.endswith("du"))      # True
+
+# 11. Checking String Types
+print("Python".isalpha())   # True
+print("123".isdigit())      # True
+print("Python3".isalnum())  # True
+print("   ".isspace())      # True
+
+
+# 12. Aligning Strings
+text = "Hi"
+print(text.center(10, "-"))  # ----Hi----
+print(text.ljust(10, "*"))   # Hi********
+print(text.rjust(10, "*"))   # ********Hi
+
+
+# 13. Zero Padding
+num = "42"
+print(num.zfill(5))  # 00042
+
+# 14. String Formatting
+name = "Bindu"
+age = 23
+print("My name is {} and I am {} years old".format(name, age))
+print(f"My name is {name} and I am {age} years old")  # f-string
